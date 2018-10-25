@@ -1,0 +1,40 @@
+{
+  "name":         "simple/rest-resources",
+  "description":  "Component which provide REST API from yaml files.",
+  "keywords":     ["api", "rest", "resources"],
+  "type":         "symfony-bundle",
+  "license":      "MIT",
+  "authors":     [
+    {
+      "name":     "Kevin Rousse",
+      "email":    "rousse_k@etna-alternance.net"
+    }
+  ],
+  "autoload": {
+    "psr-0": { "RestResourcesBundle\\Components": "" }
+  },
+  "require" : {
+    "php": "^7.1.3",
+    "ext-ctype": "*",
+    "ext-iconv": "*",
+    "sensio/framework-extra-bundle": "^5.2",
+    "symfony/asset": "*",
+    "symfony/console": "*",
+    "symfony/flex": "^1.0",
+    "symfony/form": "*",
+    "symfony/framework-bundle": "*",
+    "symfony/maker-bundle": "^1.5",
+    "symfony/orm-pack": "^1.0",
+    "symfony/security-bundle": "*",
+    "symfony/serializer": "*",
+    "symfony/validator": "*",
+    "symfony/yaml": "*"
+  },
+  "target-dir": "RestResourcesBundle/Components",
+  "scripts": {
+    "auto-scripts": {
+      "cache:clear": "symfony-cmd",
+      "assets:install %PUBLIC_DIR%": "symfony-cmd"
+    }
+  }
+}
