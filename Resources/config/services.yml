@@ -1,0 +1,25 @@
+services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: false       # Allows optimizing the container by removing unused services; this also means
+                            # fetching services directly from the container via $container->get() won't work.
+                            # The best practice is to be explicit about your dependencies anyway.
+#   Services
+    Simple\Bundle\RestResourcesBundle\Service\ResourceFileProvider:
+      arguments: []
+#   Controller
+    Simple\Bundle\RestResourcesBundle\Controller\ResourceController:
+      tags: ['controller.service_arguments']
+#   Command
+    Simple\Bundle\RestResourcesBundle\Command\CreateResourceFileCommand:
+        arguments: ['@maker.doctrine_helper', '@kernel']
+        tags: ['console.command']
+#   FormType
+    Simple\Bundle\RestResourcesBundle\Form\Type\:
+        resource: '../../Form/Type/'
+        tags: ['form.type']
+#   Listener
+    Simple\Bundle\RestResourcesBundle\Event\Listener\BodyListener:
+      tags:
+        - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest}
