@@ -9,8 +9,7 @@ This component has for purpose to provide a simple REST API with no development.
   - Import our controller on your routing file 
   ``` 
     rest_resources:
-       resource: '@RestResources/Resources/config/routing.yml'
-       type: annotation
+       resource: '@RestResourcesBundle/Resources/config/routing.yaml'
   ```
   - Create your *.resource.yml `ex. users.resource.yml` file with the `restresources:file:create` command
 
