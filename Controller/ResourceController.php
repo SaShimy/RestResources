@@ -1,10 +1,10 @@
 <?php
 
-namespace Simple\Component\RestResources\Controller;
+namespace Simple\Bundle\RestResourcesBundle\Controller;
 
-use Simple\Component\RestResources\Model\ResourceInterface;
-use Simple\Component\RestResources\Repository\ResourceRepositoryInterface;
-use Simple\Component\RestResources\Service\ResourceFileProvider;
+use Simple\Bundle\RestResourcesBundle\Model\ResourceInterface;
+use Simple\Bundle\RestResourcesBundle\Repository\ResourceRepositoryInterface;
+use Simple\Bundle\RestResourcesBundle\Service\ResourceFileProvider;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;

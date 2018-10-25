@@ -1,9 +1,9 @@
 <?php
-namespace Simple\Component\RestResources\Model;
+namespace Simple\Bundle\RestResourcesBundle\Model;
 
 /**
  * Class ResourceInterface
- * @package Simple\Component\RestResources\Model
+ * @package Simple\Bundle\RestResourcesBundle\Model
  */
 interface ResourceInterface
 {

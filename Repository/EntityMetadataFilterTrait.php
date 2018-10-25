@@ -1,12 +1,12 @@
 <?php
 
-namespace Simple\Component\RestResources\Repository;
+namespace Simple\Bundle\RestResourcesBundle\Repository;
 
 use Doctrine\ORM\QueryBuilder;
 
 /**
  * Trait EntityMetadataFilterTrait
- * @package Simple\Component\RestResources\Repository
+ * @package Simple\Bundle\RestResourcesBundle\Repository
  */
 trait EntityMetadataFilterTrait
 {

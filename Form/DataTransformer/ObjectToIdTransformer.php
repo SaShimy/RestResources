@@ -1,6 +1,6 @@
 <?php
 
-namespace Simple\Component\RestResources\Form\DataTransformer;
+namespace Simple\Bundle\RestResourcesBundle\Form\DataTransformer;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\Common\Persistence\ObjectRepository;

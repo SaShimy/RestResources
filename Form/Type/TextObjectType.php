@@ -1,7 +1,7 @@
 <?php
-namespace Simple\Component\RestResources\Form\Type;
+namespace Simple\Bundle\RestResourcesBundle\Form\Type;
 
-use Simple\Component\RestResources\Form\DataTransformer\ObjectToIdTransformer;
+use Simple\Bundle\RestResourcesBundle\Form\DataTransformer\ObjectToIdTransformer;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Symfony\Component\Form\AbstractType;
@@ -11,7 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Class TextObjectType
- * @package Simple\Component\RestResources\Form\Type
+ * @package Simple\Bundle\RestResourcesBundle\Form\Type
  */
 class TextObjectType extends AbstractType
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Simple\Component\RestResources\DependencyInjection;
+namespace Simple\Bundle\RestResourcesBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader;

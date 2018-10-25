@@ -1,5 +1,5 @@
 <?php
-namespace Simple\Component\RestResources\Service;
+namespace Simple\Bundle\RestResourcesBundle\Service;
 
 //use SimpleKernel;
 use Psr\Container\ContainerInterface;
