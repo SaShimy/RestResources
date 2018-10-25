@@ -11,7 +11,7 @@
     }
   ],
   "autoload": {
-    "psr-0": { "RestResourcesBundle\\Components": "" }
+    "psr-4": { "Simple\\Component\\RestResources": "" }
   },
   "require" : {
     "php": "^7.1.3",
@@ -30,7 +30,6 @@
     "symfony/validator": "*",
     "symfony/yaml": "*"
   },
-  "target-dir": "RestResourcesBundle/Components",
   "scripts": {
     "auto-scripts": {
       "cache:clear": "symfony-cmd",

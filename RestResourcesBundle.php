@@ -1,10 +1,10 @@
 <?php
-namespace Components\RestResources;
+namespace Simple\Component\RestResources;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SimpleRestResourcesBundle extends Bundle
+class RestResourcesBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {

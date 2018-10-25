@@ -1,5 +1,5 @@
 <?php
-namespace Components\Restresources\Command;
+namespace Simple\Component\RestResources\Command;
 
 use Doctrine\Bundle\DoctrineBundle\Mapping\DisconnectedMetadataFactory;
 use Doctrine\ORM\Mapping\ClassMetadata;

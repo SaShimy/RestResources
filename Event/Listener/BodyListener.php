@@ -1,5 +1,5 @@
 <?php
-namespace Components\Restresources\Event\Listener;
+namespace Simple\Component\RestResources\Event\Listener;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;

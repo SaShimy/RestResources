@@ -1,4 +1,4 @@
-# Restresources component
+# RestResources component
 
 ## Information
 

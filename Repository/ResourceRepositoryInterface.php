@@ -1,9 +1,9 @@
 <?php
-namespace Components\Restresources\Repository;
+namespace Simple\Component\RestResources\Repository;
 
 /**
  * Class ResourceRepositoryInterface
- * @package Components\Restresources\Repository
+ * @package Simple\Component\RestResources\Repository
  */
 interface ResourceRepositoryInterface
 {

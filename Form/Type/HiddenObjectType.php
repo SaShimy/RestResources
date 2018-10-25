@@ -1,7 +1,7 @@
 <?php
-namespace Components\Restresources\Form\Type;
+namespace Simple\Component\RestResources\Form\Type;
 
-use Components\Restresources\Form\DataTransformer\ObjectToIdTransformer;
+use Simple\Component\RestResources\Form\DataTransformer\ObjectToIdTransformer;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Symfony\Component\Form\AbstractType;
@@ -11,7 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Class HiddenObjectType
- * @package Components\Restresources\Form\Type
+ * @package Simple\Component\RestResources\Form\Type
  */
 class HiddenObjectType extends AbstractType
 {
