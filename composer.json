@@ -11,7 +11,7 @@
     }
   ],
   "autoload": {
-    "psr-4": { "Simple\\Component\\RestResources": "" }
+    "psr-4": { "Simple\\Component\\RestResources\\": "" }
   },
   "require" : {
     "php": "^7.1.3",
