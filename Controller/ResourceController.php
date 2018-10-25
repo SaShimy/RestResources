@@ -21,6 +21,7 @@ use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 class ResourceController extends AbstractController
 {
     const GROUP_MINIMAL = 'minimal';
+    const GROUP_EXTENDED = 'extended';
     const DATETIME_FORMAT = "Y-m-d\TH:i:s.v\Z";
 
     /**
@@ -45,16 +46,32 @@ class ResourceController extends AbstractController
         $class = $file['class'];
         #Get $data
         $repository = $em->getRepository($class);
-        if (!$repository instanceof ResourceRepositoryInterface)
-        {
+        if (!$repository instanceof ResourceRepositoryInterface) {
             throw new \LogicException;
         }
         $parameters = $request->query->all();
+        #Group
         $group = $parameters['_group'] ?? self::GROUP_MINIMAL;
         unset($parameters['_group']);
-        $data = $repository->cget($parameters);
-        if (!isset($data[0]))
-        {
+        #Sort
+        $arraySort = array();
+        $sort = $parameters['_sort'] ?? null;
+        if ($sort) {
+            if (strpos($sort, '-') === 0) {
+                $arraySort = array(ltrim($sort, '-') => 'DESC');
+            } else {
+                $arraySort = array($sort => 'ASC');
+            }
+        }
+        unset($parameters['_sort']);
+        #Limit
+        $limit = $parameters['_limit'] ?? null;
+        unset($parameters['_limit']);
+        #Offset
+        $offset = $parameters['_offset'] ?? null;
+        unset($parameters['_offset']);
+        $data = $repository->cget($parameters, $arraySort, $limit, $offset);
+        if (!isset($data[0])) {
             return new JsonResponse([], 200);
         }
         #Check granted
