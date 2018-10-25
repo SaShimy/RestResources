@@ -92,7 +92,7 @@ trait EntityMetadataFilterTrait
                 $expr = $operator;
 
                 $_value = substr($value, strlen($operator), strlen($value));
-                $value = ($operator === 'like') ? strtolower($_value) . "%" : strtolower($_value);;
+                $value = ($operator === 'like') ? strtolower($_value) . "%" : strtolower($_value);
                 break;
             }
         }
