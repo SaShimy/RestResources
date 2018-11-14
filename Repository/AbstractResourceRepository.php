@@ -29,7 +29,7 @@ class AbstractResourceRepository extends ServiceEntityRepository implements Reso
 
     /**
      * @param array        $filters
-     * @param array|null   $sort
+     * @param array        $sort
      * @param integer|null $limit
      * @param integer|null $offset
      *

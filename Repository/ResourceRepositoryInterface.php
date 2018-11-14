@@ -9,11 +9,11 @@ interface ResourceRepositoryInterface
 {
     /**
      * @param array        $filters
-     * @param array|null   $sort
+     * @param array        $sort
      * @param integer|null $limit
      * @param integer|null $offset
      */
-    public function cget(array $filters, array $sort = null, $limit = null, $offset = null);
+    public function cget(array $filters, array $sort = array(), $limit = null, $offset = null);
 
     /**
      * @param $id
