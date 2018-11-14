@@ -18,9 +18,12 @@ class AbstractResourceRepository extends ServiceEntityRepository implements Reso
      */
     protected function addOrderBy(&$qb, $sort = array())
     {
-        foreach ($sort as $field => $type)
+        if ($sort)
         {
-            $qb->orderBy("{$qb->getRootAliases()[0]}.$field", $type);
+            foreach ($sort as $field => $type)
+            {
+                $qb->orderBy("{$qb->getRootAliases()[0]}.$field", $type);
+            }
         }
     }
 
@@ -32,7 +35,7 @@ class AbstractResourceRepository extends ServiceEntityRepository implements Reso
      *
      * @return array
      */
-    public function cget(array $filters, array $sort = null, $limit = null, $offset = null)
+    public function cget(array $filters, array $sort = array(), $limit = null, $offset = null)
     {
         $qb = $this->filterByMetadataFieldNames($filters);
         $this->addOrderBy($qb, $sort);
