@@ -81,7 +81,7 @@ class ResourceFileProvider
             }
         }
 
-        $dir = $this->kernelRootDir . '/*/Resources/*';
+        $dir = $this->kernelRootDir . '/Resources/*';
 
         $parser = new Parser();
         $finder = new Finder();

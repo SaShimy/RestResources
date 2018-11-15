@@ -46,7 +46,8 @@ class ResourceController extends AbstractController
         $class = $file['class'];
         #Get $data
         $repository = $em->getRepository($class);
-        if (!$repository instanceof ResourceRepositoryInterface) {
+        if (!$repository instanceof ResourceRepositoryInterface)
+        {
             throw new \LogicException;
         }
         $parameters = $request->query->all();
@@ -56,10 +57,14 @@ class ResourceController extends AbstractController
         #Sort
         $arraySort = array();
         $sort = $parameters['_sort'] ?? null;
-        if ($sort) {
-            if (strpos($sort, '-') === 0) {
+        if ($sort)
+        {
+            if (strpos($sort, '-') === 0)
+            {
                 $arraySort = array(ltrim($sort, '-') => 'DESC');
-            } else {
+            }
+            else
+            {
                 $arraySort = array($sort => 'ASC');
             }
         }
@@ -71,7 +76,8 @@ class ResourceController extends AbstractController
         $offset = $parameters['_offset'] ?? null;
         unset($parameters['_offset']);
         $data = $repository->cget($parameters, $arraySort, $limit, $offset);
-        if (!isset($data[0])) {
+        if (!isset($data[0]))
+        {
             return new JsonResponse([], 200);
         }
         #Check granted
@@ -117,6 +123,11 @@ class ResourceController extends AbstractController
             throw new \LogicException;
         }
         $data = $repository->get($id);
+        #Check exists
+        if (is_null($data))
+        {
+            throw new NotFoundHttpException();
+        }
         #Check granted
         $this->denyAccessUnlessGranted(ResourceInterface::CAN_RETRIEVE, $data);
         $content = $this->get('serializer')
@@ -125,7 +136,7 @@ class ResourceController extends AbstractController
                 'datetime_format' => self::DATETIME_FORMAT
             ]);
 
-        return New JsonResponse($content, 200, [], true);
+        return new JsonResponse($content, 200, [], true);
     }
 
     /**
@@ -191,6 +202,11 @@ class ResourceController extends AbstractController
         }
         #Get $data
         $parent = $repository->get($id);
+        #Check exists
+        if (is_null($parent))
+        {
+            throw new NotFoundHttpException();
+        }
         $data = new $childClass();
         $setter = "set" . $file['children'][$childResource];
         $data->$setter($parent);
@@ -229,6 +245,11 @@ class ResourceController extends AbstractController
             throw new \LogicException;
         }
         $data = $repository->get($id);
+        #Check exists
+        if (is_null($data))
+        {
+            throw new NotFoundHttpException();
+        }
         #Check granted
         $this->denyAccessUnlessGranted(ResourceInterface::CAN_UPDATE, $data);
         $form = $this->createForm($file['type'], $data, ['method' => 'PATCH']);
@@ -264,12 +285,17 @@ class ResourceController extends AbstractController
             throw new \LogicException;
         }
         $data = $repository->get($id);
+        #Check exists
+        if (is_null($data))
+        {
+            throw new NotFoundHttpException();
+        }
         #Check granted
         $this->denyAccessUnlessGranted(ResourceInterface::CAN_DELETE, $data);
         $em->remove($data);
         $em->flush();
 
-        return New JsonResponse('deleted', 200, [], false);
+        return new JsonResponse('deleted', 200, [], false);
     }
 
     private function getErrorMessages(FormInterface $form)
