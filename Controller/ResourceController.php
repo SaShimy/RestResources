@@ -22,7 +22,7 @@ class ResourceController extends AbstractController
 {
     const GROUP_MINIMAL = 'minimal';
     const GROUP_EXTENDED = 'extended';
-    const DATETIME_FORMAT = "Y-m-d\TH:i:s.v\Z";
+    const DATETIME_FORMAT = "Y-m-d\TH:i:sP";
 
     /**
      * @Route("/{resource}", methods={"GET"})
