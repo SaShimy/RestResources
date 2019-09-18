@@ -11,10 +11,6 @@ services:
 #   Controller
     Simple\Bundle\RestResourcesBundle\Controller\ResourceController:
       tags: ['controller.service_arguments']
-#   Command
-    Simple\Bundle\RestResourcesBundle\Command\CreateResourceFileCommand:
-        arguments: ['@maker.doctrine_helper', '@kernel']
-        tags: ['console.command']
 #   FormType
     Simple\Bundle\RestResourcesBundle\Form\Type\:
         resource: '../../Form/Type/'
