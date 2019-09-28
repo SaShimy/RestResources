@@ -5,6 +5,7 @@ namespace Simple\Bundle\RestResourcesBundle\Service;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Yaml\Parser;
 
 class ResourceFileProvider
@@ -100,7 +101,7 @@ class ResourceFileProvider
             }
         }
 
-        throw new \Exception(sprintf("No file found for class : %s", $needle));
+        throw new NotFoundHttpException(sprintf("No file found for class : %s", $needle));
     }
 
 }
